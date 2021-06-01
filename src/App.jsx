@@ -1,17 +1,18 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-
+import Home from './components/Home';
+import Stared from './components/Stared'
 function App() {
   return (
     <div>
     <Navbar />
       <Switch>
         <Route exact path='/'>
-          This is home page
+        <Home/>
         </Route>
         <Route exact path='/stared'>
-          This is stared page
+        <Stared/>
         </Route>
         <Route> This is 404</Route>
       </Switch>
