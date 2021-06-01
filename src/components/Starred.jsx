@@ -1,11 +1,11 @@
 import React from 'react'
 import MainPageLayout from './MainPageLayout'
-const Home = () => {
+const Starred = () => {
   return (
-    <MainPageLayout >
-      This is Home page
+    <MainPageLayout>
+      This is stared
     </MainPageLayout>
   )
 }
 
-export default Home
+export default Starred

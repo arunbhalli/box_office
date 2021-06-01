@@ -4,7 +4,7 @@ import React from 'react';
 const Navbar = () => {
   const MyLinks = [
     { to: '/', text: 'Home' },
-    { to: '/stared', text: 'Stared' },
+    { to: '/starred', text: 'Starred' },
   ];
   return (
     <div>
