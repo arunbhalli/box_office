@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import MainPageLayout from './MainPageLayout';
+import { apiGet } from '../modules/Movies';
 
 const Home = () => {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState('');
   const [results, setResults] = useState(null);
+
   const onSearch = () => {
-    fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
-      .then((r) => r.json())
-      .then((result) => {
-        setResults(result);
-        console.log(result);
-      });
+    apiGet(`/search/shows?q=${input}`).then((result) => {
+      setResults(result);
+      console.log(result);
+    });
   };
 
   const onInputChange = (event) => {
-    setInput(event.target.value);
+    setInput(event.target.search.value);
   };
 
   const onKeyDown = (event) => {
@@ -42,15 +42,15 @@ const Home = () => {
     <MainPageLayout>
       <input
         type='text'
+        name='search'
         onchange={onInputChange}
         onKeyDown={onKeyDown}
-        value={input}
         placeholder='Search'
       />
       <button type='button' onClick={onSearch}>
         Search
       </button>
-      {renderResults()}
+      {renderResults}
     </MainPageLayout>
   );
 };
