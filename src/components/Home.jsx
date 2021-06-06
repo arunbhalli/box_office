@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import MainPageLayout from './MainPageLayout';
 import { apiGet } from '../modules/Movies';
-import ShowGrid from './show/ShowGrid'
-import ActorGrid from './actor/ActorGrid'
+import ShowGrid from './show/ShowGrid';
+import ActorGrid from './actor/ActorGrid';
 const Home = () => {
   const [input, setInput] = useState('');
   const [results, setResults] = useState([]);
   const [searchOptions, setSearchOptions] = useState('shows');
 
   const isShowSearch = searchOptions === 'shows';
-
   const onSearch = () => {
     apiGet(`/search/${searchOptions}?q=${input}`).then((result) => {
       setResults(result);
     });
-    const searchResult = renderResults();
   };
 
   const onInputChange = (event) => {
