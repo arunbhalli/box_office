@@ -80,7 +80,11 @@ const Home = () => {
         Search
       </button>
       {results && renderResults()}
+      <div>
+        This is my testing application
+      </div>
     </MainPageLayout>
+    
   );
 };
 
